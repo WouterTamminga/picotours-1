@@ -6,6 +6,7 @@ use App\City;
 use App\User;
 use App\Tour;
 use App\TourCategory;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class CityController extends Controller
@@ -190,10 +191,5 @@ class CityController extends Controller
         );
 
         return view('pages.citytemplate')->with($data);
-
-
-
-
-
     }
 }

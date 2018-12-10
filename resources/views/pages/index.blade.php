@@ -12,6 +12,7 @@
     @include ('inc.cta')
     @include ('inc.footer')
 
+
     {{--@include ('inc.profile')--}}
     {{--@include ('inc.overview_guides')--}}
     {{--@include ('inc.citytemplate')--}}
