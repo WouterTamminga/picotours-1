@@ -56,8 +56,26 @@ class TourController extends Controller
             'tourstartlocation' => 'required',
             'tourdeparturetime' => 'required',
             'tourduration' => 'required',
-            'tourdescription' => 'required'
+            'tourdescription' => 'required',
+            'tour_img' => 'image|nullable|max:1999'
+
         ]);
+
+     // Handle File Upload
+     if($request->hasFile('tour_img')){
+        // Get filename with the extension
+        $filenameWithExt = $request->file('tour_img')->getClientOriginalName();
+        // Get just filename
+        $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+        // Get just ext
+        $extension = $request->file('tour_img')->getClientOriginalExtension();
+        // Filename to store
+        $fileNameToStore= $filename.'_'.time().'.'.$extension;
+        // Upload Image
+        $path = $request->file('tour_img')->storeAs('public/tour_images', $fileNameToStore);
+    } else {
+        $fileNameToStore = 'noimage.jpg';
+    }
 
         $tours = new Tour();
         $tours->name = $request->input('name');
@@ -69,6 +87,7 @@ class TourController extends Controller
         $tours->tourdeparturetime = $request->input('tourdeparturetime');
         $tours->tourduration = $request->input('tourduration');
         $tours->tourdescription = $request->input('tourdescription');
+        $tours->tour_img = $fileNameToStore;
         $tours->save();
 
         return redirect('/tours')->with('success', 'You added a Tour!');

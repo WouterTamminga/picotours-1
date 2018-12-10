@@ -33,6 +33,12 @@
             {{Form::label('tourdescription', 'Description')}}
             {{Form::textarea('tourdescription', '', ['class' => 'form-control textarea', 'placeholder' => 'Description for this tour..'])}}
         </div>
+
+        <div class="form-group">
+
+            {{Form::file('tour_img')}}
+
+        </div>
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
         {!! Form::close() !!}
     </div>
