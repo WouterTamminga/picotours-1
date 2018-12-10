@@ -19,6 +19,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/cities">Cities</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tourcategories">Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tours">Tours</a>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -52,7 +58,7 @@
                             </form>
                         </div>
                     </li>
-                    @endguest
+                @endguest
             </ul>
         </div>
     </div>

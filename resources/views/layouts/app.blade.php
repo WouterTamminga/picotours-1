@@ -104,6 +104,7 @@ p {
 
         @include('inc.messages')
         @yield('content')
+{{--@include ('inc.citytemplate')--}}
 
 
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
